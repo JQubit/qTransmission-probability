@@ -114,7 +114,8 @@ T_List = [];
         % dimensionless, i.e. it has [1]
 
         %%--- Solve Matrix System ---%%
-        A = (M^(-1))*X;
+        %A = (M^(-1))*X;
+        A = linsolve(M,X); % uses LU decomposition to solve
 
         %To calculate the transmission probability, the only coeff. we are
         %interested in is the A_(n+1)^(+)... which is the last one of the A vector
